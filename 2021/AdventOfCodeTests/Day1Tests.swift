@@ -4,7 +4,6 @@
 //
 
 import XCTest
-import Algorithms
 
 class Day1Tests: XCTestCase {
     let day = Day1()

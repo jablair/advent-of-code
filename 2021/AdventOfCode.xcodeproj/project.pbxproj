@@ -83,13 +83,18 @@
 		39C3D07B27556CA700B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
 		39C3D07D27556D7800B2F989 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		39C3D0B4275572E500B2F989 /* Day1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D0B3275572E500B2F989 /* Day1Tests.swift */; };
-		39C3D0B52755745900B2F989 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		39C3D0B62755746500B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
 		AADA71292757221F009726D6 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = AADA71282757221F009726D6 /* Algorithms */; };
 		AADA712D27572774009726D6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA712C27572774009726D6 /* Collections */; };
 		AADA712F27572774009726D6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = AADA712E27572774009726D6 /* DequeModule */; };
 		AADA713127572774009726D6 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA713027572774009726D6 /* OrderedCollections */; };
 		AADA713827574436009726D6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA713727574436009726D6 /* Helpers.swift */; };
+		AADA713B275746D6009726D6 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = AADA713A275746D6009726D6 /* Algorithms */; };
+		AADA713D275746EE009726D6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA713C275746EE009726D6 /* Collections */; };
+		AADA713F275746EE009726D6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = AADA713E275746EE009726D6 /* DequeModule */; };
+		AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA7140275746EE009726D6 /* OrderedCollections */; };
+		AADA71422757478D009726D6 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
+		AADA714327574791009726D6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA713727574436009726D6 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +194,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADA713D275746EE009726D6 /* Collections in Frameworks */,
+				AADA713B275746D6009726D6 /* Algorithms in Frameworks */,
+				AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */,
+				AADA713F275746EE009726D6 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,10 +343,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				AADA713627573D80009726D6 /* PBXTargetDependency */,
 				AADA713427573D73009726D6 /* PBXTargetDependency */,
 			);
 			name = AdventOfCodeTests;
+			packageProductDependencies = (
+				AADA713A275746D6009726D6 /* Algorithms */,
+				AADA713C275746EE009726D6 /* Collections */,
+				AADA713E275746EE009726D6 /* DequeModule */,
+				AADA7140275746EE009726D6 /* OrderedCollections */,
+			);
 			productName = AdventOfCodeTests;
 			productReference = 39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -449,7 +463,6 @@
 				392786262755B91800922454 /* Day5Tests.swift in Sources */,
 				392786322755B91800922454 /* Day10Tests.swift in Sources */,
 				3927862E2755B91800922454 /* Day6Tests.swift in Sources */,
-				39C3D0B52755745900B2F989 /* Day1.swift in Sources */,
 				392785F52755B85000922454 /* Day6.swift in Sources */,
 				392786012755B85000922454 /* Day14.swift in Sources */,
 				392785FC2755B85000922454 /* Day2.swift in Sources */,
@@ -457,6 +470,7 @@
 				3927862A2755B91800922454 /* Day24Tests.swift in Sources */,
 				392786202755B91800922454 /* Day13Tests.swift in Sources */,
 				392785F02755B85000922454 /* Day18.swift in Sources */,
+				AADA714327574791009726D6 /* Helpers.swift in Sources */,
 				3927862B2755B91800922454 /* Day9Tests.swift in Sources */,
 				392785FA2755B85000922454 /* Day4.swift in Sources */,
 				392786352755B91800922454 /* Day2Tests.swift in Sources */,
@@ -471,6 +485,7 @@
 				392786312755B91800922454 /* Day20Tests.swift in Sources */,
 				392785F12755B85000922454 /* Day12.swift in Sources */,
 				3927861F2755B91800922454 /* Day22Tests.swift in Sources */,
+				AADA71422757478D009726D6 /* Day1.swift in Sources */,
 				392785F92755B85000922454 /* Day11.swift in Sources */,
 				39C3D0B62755746500B2F989 /* Day.swift in Sources */,
 				392786342755B91800922454 /* Day8Tests.swift in Sources */,
@@ -494,10 +509,6 @@
 			isa = PBXTargetDependency;
 			target = 39C3D06C27556C2F00B2F989 /* AdventOfCode */;
 			targetProxy = AADA713327573D73009726D6 /* PBXContainerItemProxy */;
-		};
-		AADA713627573D80009726D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = AADA713527573D80009726D6 /* Algorithms */;
 		};
 /* End PBXTargetDependency section */
 
@@ -747,10 +758,25 @@
 			package = AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
 		};
-		AADA713527573D80009726D6 /* Algorithms */ = {
+		AADA713A275746D6009726D6 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		AADA713C275746EE009726D6 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		AADA713E275746EE009726D6 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		AADA7140275746EE009726D6 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
