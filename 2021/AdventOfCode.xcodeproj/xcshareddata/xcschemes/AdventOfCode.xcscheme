@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-i /path/to/inputs"
+            argument = "-i &quot;$(PROJECT_DIR)/inputs&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

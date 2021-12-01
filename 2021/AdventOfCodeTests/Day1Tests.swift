@@ -12,15 +12,9 @@ class Day1Tests: XCTestCase {
         XCTAssertEqual(
             day.part1(
                 """
-                1721
-                979
-                366
-                299
-                675
-                1456
                 """
             ) as? Int,
-            514579
+            0
         )
     }
 
@@ -28,15 +22,9 @@ class Day1Tests: XCTestCase {
         XCTAssertEqual(
             day.part2(
                 """
-                1721
-                979
-                366
-                299
-                675
-                1456
                 """
             ) as? Int,
-            241861950
+            0
         )
     }
 
