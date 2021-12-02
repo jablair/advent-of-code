@@ -79,7 +79,7 @@
 		392786332755B91800922454 /* Day23Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927861B2755B91800922454 /* Day23Tests.swift */; };
 		392786342755B91800922454 /* Day8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927861C2755B91800922454 /* Day8Tests.swift */; };
 		392786352755B91800922454 /* Day2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927861D2755B91800922454 /* Day2Tests.swift */; };
-		39C3D07127556C2F00B2F989 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07027556C2F00B2F989 /* main.swift */; };
+		39C3D07127556C2F00B2F989 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07027556C2F00B2F989 /* Runner.swift */; };
 		39C3D07B27556CA700B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
 		39C3D07D27556D7800B2F989 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		39C3D0B4275572E500B2F989 /* Day1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D0B3275572E500B2F989 /* Day1Tests.swift */; };
@@ -95,6 +95,7 @@
 		AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA7140275746EE009726D6 /* OrderedCollections */; };
 		AADA71422757478D009726D6 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		AADA714327574791009726D6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA713727574436009726D6 /* Helpers.swift */; };
+		AADA714627585A61009726D6 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = AADA714527585A61009726D6 /* ArgumentParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,7 +170,7 @@
 		3927861C2755B91800922454 /* Day8Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day8Tests.swift; sourceTree = "<group>"; };
 		3927861D2755B91800922454 /* Day2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day2Tests.swift; sourceTree = "<group>"; };
 		39C3D06D27556C2F00B2F989 /* AdventOfCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode; sourceTree = BUILT_PRODUCTS_DIR; };
-		39C3D07027556C2F00B2F989 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		39C3D07027556C2F00B2F989 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		39C3D07A27556CA700B2F989 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		39C3D07C27556D7800B2F989 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +187,7 @@
 				AADA712D27572774009726D6 /* Collections in Frameworks */,
 				AADA71292757221F009726D6 /* Algorithms in Frameworks */,
 				AADA713127572774009726D6 /* OrderedCollections in Frameworks */,
+				AADA714627585A61009726D6 /* ArgumentParser in Frameworks */,
 				AADA712F27572774009726D6 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +230,7 @@
 			children = (
 				39C3D07927556C5B00B2F989 /* Days */,
 				AADA713227573BA5009726D6 /* inputs */,
-				39C3D07027556C2F00B2F989 /* main.swift */,
+				39C3D07027556C2F00B2F989 /* Runner.swift */,
 				AADA713727574436009726D6 /* Helpers.swift */,
 			);
 			path = AdventOfCode;
@@ -327,6 +329,7 @@
 				AADA712C27572774009726D6 /* Collections */,
 				AADA712E27572774009726D6 /* DequeModule */,
 				AADA713027572774009726D6 /* OrderedCollections */,
+				AADA714527585A61009726D6 /* ArgumentParser */,
 			);
 			productName = AdventOfCode;
 			productReference = 39C3D06D27556C2F00B2F989 /* AdventOfCode */;
@@ -386,6 +389,7 @@
 			packageReferences = (
 				39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				AADA714427585A61009726D6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 39C3D06E27556C2F00B2F989 /* Products */;
 			projectDirPath = "";
@@ -433,7 +437,7 @@
 				392785DF2755B84800922454 /* Day10.swift in Sources */,
 				392785E62755B84800922454 /* Day22.swift in Sources */,
 				392785DB2755B84800922454 /* Day23.swift in Sources */,
-				39C3D07127556C2F00B2F989 /* main.swift in Sources */,
+				39C3D07127556C2F00B2F989 /* Runner.swift in Sources */,
 				392785D92755B84800922454 /* Day20.swift in Sources */,
 				392785D82755B84800922454 /* Day19.swift in Sources */,
 				392785E52755B84800922454 /* Day8.swift in Sources */,
@@ -735,6 +739,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		AADA714427585A61009726D6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -777,6 +789,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		AADA714527585A61009726D6 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AADA714427585A61009726D6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
