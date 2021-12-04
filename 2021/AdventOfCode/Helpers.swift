@@ -12,3 +12,12 @@ extension Sequence {
         return try self.filter(predicate).count
     }
 }
+
+extension IndexPath {
+    var column: Int { item }
+    var row: Int { section }
+    
+    init(column: Int, row: Int) {
+        self.init(item: column, section: row)
+    }
+}
