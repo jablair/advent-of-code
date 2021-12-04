@@ -17,7 +17,7 @@ class Day2Tests: XCTestCase {
             down 8
             forward 2
             """
-        let output = day.part1(directions)
+        let output = try day.part1(directions)
         XCTAssertEqual(output as? Int, 150)
     }
 
@@ -30,7 +30,7 @@ class Day2Tests: XCTestCase {
             down 8
             forward 2
             """
-        let output = day.part2(directions)
+        let output = try day.part2(directions)
         XCTAssertEqual(output as? Int, 900)
     }
 

@@ -4,9 +4,15 @@
 //
 
 import Foundation
+import RegularExpressionDecoder
 
 final class Day2: Day {
-    enum Move {
+    enum Move: Decodable {
+        enum CodingKeys: String, CodingKey {
+            case direction
+            case distance
+        }
+        
         case forward(Int)
         case up(Int)
         case down(Int)
@@ -26,8 +32,13 @@ final class Day2: Day {
                 return -distance
             }
         }
-
-        init?(direction: String, distance: Int) {
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            let direction = try container.decode(String.self, forKey: .direction)
+            let distance = try container.decode(Int.self, forKey: .distance)
+            
             switch direction {
             case "forward":
                 self = .forward(distance)
@@ -36,10 +47,9 @@ final class Day2: Day {
             case "up":
                 self = .up(distance)
             default:
-                return nil
+                throw DecodingError.dataCorruptedError(forKey: .direction, in: container, debugDescription: "Unexpected direction \(direction)")
             }
         }
-        
     }
     
     struct Movement {
@@ -57,17 +67,17 @@ final class Day2: Day {
         }
     }
     
-    func part1(_ input: String) -> CustomStringConvertible {
-        let moves = input
-            .split(separator: "\n")
-            .compactMap { line -> Move? in
-                let ins = line.split(separator: " ")
-                guard let distance = Int(ins[1]) else {
-                    return nil
-                }
-                
-                return Move(direction: String(ins[0]), distance: distance)
-            }
+    let pattern: RegularExpressionPattern<Move, Move.CodingKeys> = #"""
+        \b
+        (?<\#(.direction)>[a-z]+)\s
+        (?<\#(.distance)>\d+)
+        \b
+        """#
+    
+    func part1(_ input: String) throws -> CustomStringConvertible {
+        let moves: [Move]
+        let decoder = try RegularExpressionDecoder<Move>(pattern: pattern, options: .allowCommentsAndWhitespace)
+        moves = try decoder.decode([Move].self, from: input)
         
         let distance: Movement = moves.reduce(.zero) { distance, move in
             if move.isVertical {
@@ -80,18 +90,11 @@ final class Day2: Day {
         return distance.horizontal * distance.vertical
     }
 
-    func part2(_ input: String) -> CustomStringConvertible {
-        let moves = input
-            .split(separator: "\n")
-            .compactMap { line -> Move? in
-                let ins = line.split(separator: " ")
-                guard let distance = Int(ins[1]) else {
-                    return nil
-                }
-                
-                return Move(direction: String(ins[0]), distance: distance)
-            }
-
+    func part2(_ input: String) throws -> CustomStringConvertible {
+        let moves: [Move]
+        let decoder = try RegularExpressionDecoder<Move>(pattern: pattern, options: .allowCommentsAndWhitespace)
+        moves = try decoder.decode([Move].self, from: input)
+        
         var aim: Int = 0
         var position: Int = 0
         var depth: Int = 0

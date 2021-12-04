@@ -85,6 +85,8 @@
 		39C3D0B4275572E500B2F989 /* Day1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D0B3275572E500B2F989 /* Day1Tests.swift */; };
 		39C3D0B62755746500B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
 		AACAAB29275AF7AD004F4F25 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACAAB272759E1C4004F4F25 /* XCTest.framework */; };
+		AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */; };
+		AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */; };
 		AADA71292757221F009726D6 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = AADA71282757221F009726D6 /* Algorithms */; };
 		AADA712D27572774009726D6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA712C27572774009726D6 /* Collections */; };
 		AADA712F27572774009726D6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = AADA712E27572774009726D6 /* DequeModule */; };
@@ -191,6 +193,7 @@
 				AADA71292757221F009726D6 /* Algorithms in Frameworks */,
 				AADA713127572774009726D6 /* OrderedCollections in Frameworks */,
 				AADA714627585A61009726D6 /* ArgumentParser in Frameworks */,
+				AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */,
 				AADA712F27572774009726D6 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 			files = (
 				AADA713D275746EE009726D6 /* Collections in Frameworks */,
 				AADA713B275746D6009726D6 /* Algorithms in Frameworks */,
+				AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */,
 				AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */,
 				AADA713F275746EE009726D6 /* DequeModule in Frameworks */,
 			);
@@ -334,6 +338,7 @@
 				AADA712E27572774009726D6 /* DequeModule */,
 				AADA713027572774009726D6 /* OrderedCollections */,
 				AADA714527585A61009726D6 /* ArgumentParser */,
+				AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */,
 			);
 			productName = AdventOfCode;
 			productReference = 39C3D06D27556C2F00B2F989 /* AdventOfCode */;
@@ -358,6 +363,7 @@
 				AADA713C275746EE009726D6 /* Collections */,
 				AADA713E275746EE009726D6 /* DequeModule */,
 				AADA7140275746EE009726D6 /* OrderedCollections */,
+				AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */,
 			);
 			productName = AdventOfCodeTests;
 			productReference = 39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */;
@@ -394,6 +400,7 @@
 				39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				AADA714427585A61009726D6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */,
 			);
 			productRefGroup = 39C3D06E27556C2F00B2F989 /* Products */;
 			projectDirPath = "";
@@ -743,6 +750,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/flight-school/regularexpressiondecoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -762,6 +777,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */;
+			productName = RegularExpressionDecoder;
+		};
+		AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */;
+			productName = RegularExpressionDecoder;
+		};
 		AADA71282757221F009726D6 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */;

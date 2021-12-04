@@ -66,8 +66,8 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--day 1"
-            isEnabled = "NO">
+            argument = "--day 2"
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--all-days"
