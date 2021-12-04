@@ -17,9 +17,8 @@ final class Day3: Day {
         var epsilonRate: String = ""
 
         for idx in 0..<reportLength {
-            let powerConsumption: String = reports.reduce("") { result, report in
-                let char = report[report.index(report.startIndex, offsetBy: idx)]
-                return "\(result)\(char)"
+            let powerConsumption = reports.map { report in
+                report[report.index(report.startIndex, offsetBy: idx)]
             }
             
             if powerConsumption.count(where: { $0 == "0"}) > powerConsumption.count / 2 {
@@ -49,11 +48,10 @@ final class Day3: Day {
         var co2Ratings = reports
 
         for idx in 0..<reportLength {
-            let powerConsumption: String = oxygenRatings.reduce("") { result, report in
-                let char = report[report.index(report.startIndex, offsetBy: idx)]
-                return "\(result)\(char)"
+            let powerConsumption = oxygenRatings.map { report in
+                report[report.index(report.startIndex, offsetBy: idx)]
             }
-            
+
             if powerConsumption.count(where: { $0 == "1"}) >= powerConsumption.count(where: { $0 == "0"}) {
                 oxygenRatings = oxygenRatings.filter {
                     $0[$0.index($0.startIndex, offsetBy: idx)] == "1"
@@ -69,9 +67,8 @@ final class Day3: Day {
         }
         
         for idx in 0..<reportLength {
-            let powerConsumption: String = co2Ratings.reduce("") { result, report in
-                let char = report[report.index(report.startIndex, offsetBy: idx)]
-                return "\(result)\(char)"
+            let powerConsumption = co2Ratings.map { report in
+                report[report.index(report.startIndex, offsetBy: idx)]
             }
             
             if powerConsumption.count(where: { $0 == "0"}) <= powerConsumption.count(where: { $0 == "1"}) {
