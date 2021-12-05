@@ -21,3 +21,43 @@ extension IndexPath {
         self.init(item: column, section: row)
     }
 }
+
+class Matrix<Element>: CustomStringConvertible {
+    private(set) var data: [[Element]]
+    
+    var rowCount: Int { data.count }
+    var colCount: Int { data.first?.count ?? 0 }
+    
+    init(data: [[Element]]) {
+        self.data = data
+    }
+    
+    init(repeating repeatedValue: Element, rows: Int, columns: Int) {
+        self.data = (0..<rows).map { _ in
+            Array<Element>(repeating: repeatedValue, count: columns)
+        }
+    }
+    
+    func count(where predicate: (Element) throws -> Bool) rethrows -> Int {
+        return try data
+            .map { try $0.count(where: predicate) }
+            .reduce(0, +)
+    }
+    
+    subscript(row: Int, col: Int) -> Element {
+        get { data[row][col] }
+        set { data[row][col] = newValue }
+    }
+    
+    // MARK: CustomStringConvertible
+    var description: String {
+        let rows = data.map { row -> String in
+            let rowDescription = row
+                .map { String(describing: $0) }
+                .joined(separator: " ")
+            return "[\(rowDescription)]"
+        }
+        
+        return "[\(rows.joined(separator: "\n"))]"
+    }
+}
