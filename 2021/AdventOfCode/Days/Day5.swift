@@ -112,8 +112,8 @@ final class Day5: Day {
                 return "Error"
             }
         
-        let oceanFloor = Matrix(repeating: 0, rows: rows, columns: columns)
-        lines.forEach(oceanFloor.apply)
+        var oceanFloor = Matrix(repeating: 0, rows: rows, columns: columns)
+        lines.forEach { oceanFloor.apply(line: $0) }
         
         return oceanFloor.count { $0 > 1 }
     }
@@ -128,15 +128,15 @@ final class Day5: Day {
                 return "Error"
             }
         
-        let oceanFloor = Matrix(repeating: 0, rows: rows, columns: columns)
-        lines.forEach(oceanFloor.apply)
+        var oceanFloor = Matrix(repeating: 0, rows: rows, columns: columns)
+        lines.forEach { oceanFloor.apply(line: $0) }
         
         return oceanFloor.count { $0 > 1 }
     }
 }
 
 extension Matrix where Element == Int {
-    func apply(line: Day5.Line) {
+    mutating func apply(line: Day5.Line) {
         line.normalized.points.forEach {
             self[$0.y, $0.x] += 1
         }

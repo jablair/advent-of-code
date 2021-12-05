@@ -22,7 +22,7 @@ extension IndexPath {
     }
 }
 
-class Matrix<Element>: CustomStringConvertible {
+struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
     private(set) var data: [[Element]]
     
     var rowCount: Int { data.count }
@@ -49,6 +49,11 @@ class Matrix<Element>: CustomStringConvertible {
         set { data[row][col] = newValue }
     }
     
+    subscript(indexPath: IndexPath) -> Element {
+        get { data[indexPath.row][indexPath.column] }
+        set { data[indexPath.row][indexPath.column] = newValue }
+    }
+    
     // MARK: CustomStringConvertible
     var description: String {
         let rows = data.map { row -> String in
@@ -58,6 +63,13 @@ class Matrix<Element>: CustomStringConvertible {
             return "[\(rowDescription)]"
         }
         
-        return "[\(rows.joined(separator: "\n"))]"
+        return "[\(rows.joined(separator: "\n "))]"
+    }
+    
+    var debugDescription: String {
+        """
+        Dim: \(rowCount) x \(colCount)
+        \(description)
+        """
     }
 }
