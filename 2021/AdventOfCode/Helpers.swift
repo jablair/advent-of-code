@@ -23,7 +23,7 @@ extension IndexPath {
 }
 
 struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
-    private(set) var data: [[Element]]
+    private var data: [[Element]]
     
     var rowCount: Int { data.count }
     var colCount: Int { data.first?.count ?? 0 }

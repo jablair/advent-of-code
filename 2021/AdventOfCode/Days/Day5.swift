@@ -67,7 +67,7 @@ final class Day5: Day {
             } else if isHorizontal {
                 return (start.x...end.x).map { Point(x: $0, y: start.y) }
             } else {
-                let yStride = start.y < end.y ? 1 : -1
+                let yStride = (end.y - start.y).signum()
                 return (start.x...end.x).map { x in
                     Point(x: x, y: start.y + (x - start.x) * yStride)
                 }
