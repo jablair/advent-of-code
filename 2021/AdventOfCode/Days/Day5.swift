@@ -7,33 +7,6 @@ import Foundation
 import RegularExpressionDecoder
 
 final class Day5: Day {
-    struct Point {
-        enum Error: Swift.Error {
-            case tooManyValues(Int)
-            case insufficientValues
-        }
-        let x: Int
-        let y: Int
-        
-        init(x: Int, y: Int) {
-            self.x = x
-            self.y = y
-        }
-        
-        init(_ array: [Int]) throws {
-            guard array.count == 2 else {
-                if array.count < 2 {
-                    throw Error.insufficientValues
-                } else {
-                    throw Error.tooManyValues(array.count)
-                }
-            }
-            
-            self.x = array[0]
-            self.y = array[1]
-        }
-
-    }
     
     struct Line: Decodable {
         enum CodingKeys: String, CodingKey {
@@ -88,8 +61,8 @@ final class Day5: Day {
                 .components(separatedBy: ",")
                 .compactMap(Int.init)
 
-            self.start = try Day5.Point(start)
-            self.end = try Day5.Point(end)
+            self.start = try Point(start)
+            self.end = try Point(end)
         }
     }
     

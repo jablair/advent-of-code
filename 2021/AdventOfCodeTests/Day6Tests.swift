@@ -7,13 +7,16 @@ import XCTest
 
 class Day6Tests: XCTestCase {
     let day = Day6()
+    let input = "3,4,3,1,2"
 
     func testPart1() throws {
-        debugPrint(day.part1(""))
+        let result = day.part1(input)
+        XCTAssertEqual(result as? Int, 5934)
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        let result = day.part2(input)
+        XCTAssertEqual(result as? Int, 26984457539)
     }
 
 }
