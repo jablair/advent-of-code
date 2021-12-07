@@ -244,10 +244,10 @@
 		39C3D06F27556C2F00B2F989 /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				39C3D07027556C2F00B2F989 /* Runner.swift */,
 				39C3D07927556C5B00B2F989 /* Days */,
 				AACAAB2F275DCF17004F4F25 /* Utilities */,
 				AADA713227573BA5009726D6 /* inputs */,
-				39C3D07027556C2F00B2F989 /* Runner.swift */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";

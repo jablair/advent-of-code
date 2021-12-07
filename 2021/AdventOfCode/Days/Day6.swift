@@ -8,7 +8,6 @@ import Foundation
 final class Day6: Day {
     func part1(_ input: String) -> CustomStringConvertible {
         let fish: [Int: Int] = input
-            .trimmingCharacters(in: .newlines)
             .components(separatedBy: ",")
             .compactMap(Int.init)
             .reduce(into: [:]) { map, fish in
@@ -24,7 +23,6 @@ final class Day6: Day {
 
     func part2(_ input: String) -> CustomStringConvertible {
         let fish: [Int: Int] = input
-            .trimmingCharacters(in: .newlines)
             .components(separatedBy: ",")
             .compactMap(Int.init)
             .reduce(into: [:]) { map, fish in

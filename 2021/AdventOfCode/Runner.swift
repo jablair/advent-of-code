@@ -41,11 +41,10 @@ struct Runner: ParsableCommand {
             debugPrint("Day \(dayNumber) could not be initialized")
             return
         }
-
+        
         guard let input = try? String(
             contentsOfFile: (inputPath as NSString).appendingPathComponent("day\(dayNumber)_input.txt")
-        )
-        else {
+        ).trimmingCharacters(in: .newlines) else {
             debugPrint("Could not read day\(dayNumber)_input.txt file")
             return
         }
