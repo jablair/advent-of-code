@@ -11,15 +11,7 @@ final class Day7: Day {
             .components(separatedBy: ",")
             .compactMap(Int.init)
         
-        var minFuel = Int.max
-        for i in (positions.min() ?? 0)...(positions.max() ?? 0) {
-            let distance = positions
-                .map { abs($0 - i) }
-                .reduce(0, +)
-            minFuel = min(distance, minFuel)
-        }
-        
-        return minFuel
+        return fuelCost(from: positions) { $0 }
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
@@ -27,18 +19,19 @@ final class Day7: Day {
             .components(separatedBy: ",")
             .compactMap(Int.init)
         
+        return fuelCost(from: positions) { move in
+            move * (1 + move)/2
+        }
+    }
+    
+    func fuelCost(from positions: [Int], costCalulator: (Int) -> Int) -> Int {
         var minFuel = Int.max
         for i in (positions.min() ?? 0)...(positions.max() ?? 0) {
             let distance = positions
-                .map {
-                    let move = abs($0 - i)
-                    let cost = move * (1 + move)/2
-                    return cost
-                }
+                .map { costCalulator(abs($0 - i)) }
                 .reduce(0, +)
             minFuel = min(distance, minFuel)
         }
-        
         return minFuel
     }
 }
