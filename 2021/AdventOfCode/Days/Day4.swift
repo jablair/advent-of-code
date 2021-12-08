@@ -7,6 +7,9 @@ import Foundation
 
 final class Day4: Day {
     
+    enum Error: Swift.Error {
+        case noSolvableBoard
+    }
     struct BoardPlayInfo: Hashable {
         let indexPath: IndexPath
         let value: Int
@@ -22,7 +25,7 @@ final class Day4: Day {
   
     let bingoSize = 5
     
-    func part1(_ input: String) -> CustomStringConvertible {
+    func part1(_ input: String) throws -> CustomStringConvertible {
         let data = input.split(separator: "\n", maxSplits: 1)
         let plays = data[0]
             .components(separatedBy: ",")
@@ -56,13 +59,13 @@ final class Day4: Day {
         }
         
         guard winningBoard >= 0 else {
-            return -1
+            throw Error.noSolvableBoard
         }
         
         return boardValue(for: boards[winningBoard], plays: boardPlays[winningBoard]) * lastPlay
     }
     
-    func part2(_ input: String) -> CustomStringConvertible {
+    func part2(_ input: String) throws -> CustomStringConvertible {
         let data = input.split(separator: "\n", maxSplits: 1)
         let plays = data[0]
             .components(separatedBy: ",")
@@ -101,7 +104,7 @@ final class Day4: Day {
         }
         
         guard losingBoard >= 0 else {
-            return -1
+            throw Error.noSolvableBoard
         }
 
         return boardValue(for: boards[losingBoard], plays: boardPlays[losingBoard]) * lastPlay

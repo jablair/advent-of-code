@@ -105,6 +105,10 @@
 		AADA713F275746EE009726D6 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = AADA713E275746EE009726D6 /* DequeModule */; };
 		AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AADA7140275746EE009726D6 /* OrderedCollections */; };
 		AADA714627585A61009726D6 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = AADA714527585A61009726D6 /* ArgumentParser */; };
+		AAE165BE276174C000A72F97 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE165BD276174C000A72F97 /* Set.swift */; };
+		AAE165C12761751D00A72F97 /* Integers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE165C02761751D00A72F97 /* Integers.swift */; };
+		AAE165C2276177BA00A72F97 /* Integers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE165C02761751D00A72F97 /* Integers.swift */; };
+		AAE165C3276177BA00A72F97 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE165BD276174C000A72F97 /* Set.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +194,8 @@
 		AACAAB36275DD04A004F4F25 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		AADA713227573BA5009726D6 /* inputs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputs; sourceTree = SOURCE_ROOT; };
 		AADA713727574436009726D6 /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
+		AAE165BD276174C000A72F97 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		AAE165C02761751D00A72F97 /* Integers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +328,7 @@
 			children = (
 				AACAAB33275DD023004F4F25 /* Data Structures */,
 				AACAAB30275DCF56004F4F25 /* Geometry */,
+				AAE165BF276174D900A72F97 /* Numbers */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				AADA713727574436009726D6 /* IndexPath.swift */,
 				AACAAB36275DD04A004F4F25 /* Matrix.swift */,
 				AACAAB34275DD032004F4F25 /* Sequence.swift */,
+				AAE165BD276174C000A72F97 /* Set.swift */,
 			);
 			path = "Data Structures";
 			sourceTree = "<group>";
@@ -350,6 +358,14 @@
 				AACAAB272759E1C4004F4F25 /* XCTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAE165BF276174D900A72F97 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				AAE165C02761751D00A72F97 /* Integers.swift */,
+			);
+			path = Numbers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,9 +495,11 @@
 				39C3D07D27556D7800B2F989 /* Day1.swift in Sources */,
 				392785E22755B84800922454 /* Day21.swift in Sources */,
 				392785E72755B84800922454 /* Day9.swift in Sources */,
+				AAE165BE276174C000A72F97 /* Set.swift in Sources */,
 				392785E12755B84800922454 /* Day18.swift in Sources */,
 				392785E82755B84800922454 /* Day24.swift in Sources */,
 				AADA713827574436009726D6 /* IndexPath.swift in Sources */,
+				AAE165C12761751D00A72F97 /* Integers.swift in Sources */,
 				392785E92755B84800922454 /* Day6.swift in Sources */,
 				392785EA2755B84800922454 /* Day11.swift in Sources */,
 				392785DF2755B84800922454 /* Day10.swift in Sources */,
@@ -515,6 +533,7 @@
 				392786242755B91800922454 /* Day21Tests.swift in Sources */,
 				392785F82755B85000922454 /* Day23.swift in Sources */,
 				392786002755B85000922454 /* Day9.swift in Sources */,
+				AAE165C3276177BA00A72F97 /* Set.swift in Sources */,
 				392786262755B91800922454 /* Day5Tests.swift in Sources */,
 				392786322755B91800922454 /* Day10Tests.swift in Sources */,
 				AACAAB41275DD35E004F4F25 /* Sequence.swift in Sources */,
@@ -535,6 +554,7 @@
 				AACAAB43275DD36A004F4F25 /* Day1.swift in Sources */,
 				392785F62755B85000922454 /* Day10.swift in Sources */,
 				392785FE2755B85000922454 /* Day16.swift in Sources */,
+				AAE165C2276177BA00A72F97 /* Integers.swift in Sources */,
 				39C3D0B4275572E500B2F989 /* Day1Tests.swift in Sources */,
 				392786232755B91800922454 /* Day11Tests.swift in Sources */,
 				392785EE2755B85000922454 /* Day19.swift in Sources */,

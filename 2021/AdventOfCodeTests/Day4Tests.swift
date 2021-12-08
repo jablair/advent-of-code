@@ -30,12 +30,12 @@ class Day4Tests: XCTestCase {
     """
 
     func testPart1() throws {
-        let result = day.part1(input)
+        let result = try day.part1(input)
         XCTAssertEqual(result as? Int, 4512)
     }
 
     func testPart2() throws {
-        let result = day.part2(input)
+        let result = try day.part2(input)
         XCTAssertEqual(result as? Int, 1924)
     }
 
