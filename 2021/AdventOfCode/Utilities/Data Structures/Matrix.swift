@@ -8,6 +8,14 @@
 import Foundation
 
 struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
+    
+    enum Neighbor: CaseIterable {
+        case above
+        case right
+        case below
+        case left
+    }
+    
     private var data: [[Element]]
     
     var rowCount: Int { data.count }
@@ -27,6 +35,31 @@ struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
         return try data
             .map { try $0.count(where: predicate) }
             .reduce(0, +)
+    }
+    
+    func neighbor(_ neighbor: Neighbor, of row: Int, col: Int) -> (Element, Point)? {
+        let neighborRow: Int
+        let neighborCol: Int
+        switch neighbor {
+        case .above:
+            neighborRow = row - 1
+            neighborCol = col
+        case .right:
+            neighborRow = row
+            neighborCol = col + 1
+        case .below:
+            neighborRow = row + 1
+            neighborCol = col
+        case .left:
+            neighborRow = row
+            neighborCol = col - 1
+        }
+        
+        guard (0..<rowCount).contains(neighborRow), (0..<colCount).contains(neighborCol) else {
+            return nil
+        }
+        
+        return (self[neighborRow, neighborCol], Point(row: neighborRow, col: neighborCol))
     }
     
     subscript(row: Int, col: Int) -> Element {

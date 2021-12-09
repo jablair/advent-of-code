@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Point {
+struct Point: Hashable {
     enum Error: Swift.Error {
         case tooManyValues(Int)
         case insufficientValues
@@ -15,9 +15,16 @@ struct Point {
     let x: Int
     let y: Int
     
+    var row: Int { y }
+    var col: Int { x }
+    
     init(x: Int, y: Int) {
         self.x = x
         self.y = y
+    }
+    
+    init(row: Int, col: Int) {
+        self.init(x: col, y: row)
     }
     
     init(_ array: [Int]) throws {
