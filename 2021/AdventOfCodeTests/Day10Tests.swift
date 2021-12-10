@@ -7,13 +7,27 @@ import XCTest
 
 class Day10Tests: XCTestCase {
     let day = Day10()
+    let input = """
+    [({(<(())[]>[[{[]{<()<>>
+    [(()[<>])]({[<{<<[]>>(
+    {([(<{}[<>[]}>{[]{[(<()>
+    (((({<>}<{<{<>}{[]{[]{}
+    [[<[([]))<([[{}[[()]]]
+    [{[{({}]{}}([{[{{{}}([]
+    {<[[]]>}<{[{[{[]{()[[[]
+    [<(<(<(<{}))><([]([]()
+    <{([([[(<>()){}]>(<<{{
+    <{([{{}}[<[[[<>{}]]]>[]]
+    """
 
     func testPart1() throws {
-        debugPrint(day.part1(""))
+        let result = day.part1(input)
+        XCTAssertEqual(result as? Int, 26397)
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        let result = day.part2(input)
+        XCTAssertEqual(result as? Int, 288957)
     }
 
 }
