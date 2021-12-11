@@ -8,19 +8,19 @@
 import Foundation
 import Algorithms
 
-struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
+struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConvertible {
     
     enum Neighbor: CaseIterable {
-        case aboveLeft
-        case above
-        case aboveRight
-        case right
-        case belowRight
-        case below
-        case belowLeft
-        case left
+        case northeast
+        case north
+        case northwest
+        case west
+        case southwest
+        case south
+        case southeast
+        case east
         
-        static var immediate: [Neighbor] { [.above, .right, .below, .left] }
+        static var cardinal: [Neighbor] { [.north, .west, .south, .east] }
     }
     
     private var data: [[Element]]
@@ -36,6 +36,10 @@ struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
         self.data = (0..<rows).map { _ in
             Array<Element>(repeating: repeatedValue, count: columns)
         }
+    }
+    
+    func makeIterator() -> MatrixIterator<Element> {
+        MatrixIterator(self)
     }
     
     func count(where predicate: (Element) throws -> Bool) rethrows -> Int {
@@ -61,28 +65,28 @@ struct Matrix<Element>: CustomStringConvertible, CustomDebugStringConvertible {
         let neighborRow: Int
         let neighborCol: Int
         switch neighbor {
-        case .aboveLeft:
+        case .northeast:
             neighborRow = row - 1
             neighborCol = col - 1
-        case .above:
+        case .north:
             neighborRow = row - 1
             neighborCol = col
-        case .aboveRight:
+        case .northwest:
             neighborRow = row - 1
             neighborCol = col + 1
-        case .right:
+        case .west:
             neighborRow = row
             neighborCol = col + 1
-        case .belowRight:
+        case .southwest:
             neighborRow = row + 1
             neighborCol = col + 1
-        case .below:
+        case .south:
             neighborRow = row + 1
             neighborCol = col
-        case .belowLeft:
+        case .southeast:
             neighborRow = row + 1
             neighborCol = col - 1
-        case .left:
+        case .east:
             neighborRow = row
             neighborCol = col - 1
         }
@@ -145,4 +149,31 @@ extension Matrix where Element: Equatable {
         
         return results
     }
+}
+
+struct MatrixIterator<Element>: IteratorProtocol {
+
+    fileprivate let matrix: Matrix<Element>
+    private var current: Point = Point(row: 0, col: 0)
+
+    init(_ matrix: Matrix<Element>) {
+        self.matrix = matrix
+    }
+    
+    mutating func next() -> Element? {
+        guard current.row < matrix.rowCount else {
+            return nil
+        }
+        
+        let value = matrix[current]
+        
+        if current.col + 1 < matrix.colCount {
+            current = Point(row: current.row, col: current.col + 1)
+        } else {
+            current = Point(row: current.row + 1, col: 0)
+        }
+        
+        return value
+    }
+    
 }

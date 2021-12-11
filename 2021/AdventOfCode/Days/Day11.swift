@@ -64,7 +64,10 @@ final class Day11: Day {
                 string.compactMap { Int(String($0)) }
             }
         
-        let flashes = flash(octopi: Matrix(data: octopi)) { idx, _ in idx == 100 }
+        let flashes = flash(octopi: Matrix(data: octopi)) { idx, _ in
+            idx == 100
+        }
+
         return flashes.1
     }
 
@@ -75,11 +78,8 @@ final class Day11: Day {
                 string.compactMap { Int(String($0)) }
             }
         
-        let flashes = flash(octopi: Matrix(data: octopi)) { idx, result in
-            let flashedRows = (0..<result.rowCount).map {
-                result[row: $0].allSatisfy { brightness in brightness == 0}
-            }
-            return flashedRows.allSatisfy { $0 == true }
+        let flashes = flash(octopi: Matrix(data: octopi)) { _, result in
+            result.allSatisfy { $0 == 0 }
         }
         
         return flashes.0

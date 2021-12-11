@@ -18,11 +18,10 @@ class Day8Tests: XCTestCase {
     dbcfg fgd bdegcaf fgec aegbdf ecdfab fbedc dacgb gdcebf gf | cefg dcbef fcge gbcadfe
     bdfegc cbegaf gecbf dfcage bdacg ed bedf ced adcbefg gebcd | ed bcgafe cdgba cbgef
     egadfb cdbfeg cegd fecab cgb gbdefca cg fgcdab egfdb bfceg | gbdfcae bgc cg cgb
-    gcafb gcf dcaebfrg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
+    gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
     """
 
     func testPart1() throws {
-
         let result = day.part1(input)
         XCTAssertEqual(result as? Int, 26)
     }
