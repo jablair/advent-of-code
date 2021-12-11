@@ -13,7 +13,7 @@ final class Day9: Day {
         for row in 0..<flows.rowCount {
             for col in 0..<flows.colCount {
                 let point = flows[row, col]
-                let lowNeighbor = Matrix.Neighbor.allCases.compactMap {
+                let lowNeighbor = Matrix.Neighbor.immediate.compactMap {
                     flows.neighbor($0, of: row, col: col).map(\.0)
                 }.min() ?? -1
                 
@@ -46,7 +46,7 @@ final class Day9: Day {
     func basinNeighbors(for point: Point, in flows: Matrix<Int>) -> Set<Point> {
         let pointValue = flows[point.row, point.col]
         var basinPoints: Set<Point> = [point]
-        let neighbors = Matrix<Int>.Neighbor.allCases.compactMap { neighbor -> Point? in
+        let neighbors = Matrix<Int>.Neighbor.immediate.compactMap { neighbor -> Point? in
             guard let neighborVal = flows.neighbor(neighbor, of: point.row, col: point.col),
                   ((pointValue + 1)..<9).contains(neighborVal.0) else {
                 return nil
