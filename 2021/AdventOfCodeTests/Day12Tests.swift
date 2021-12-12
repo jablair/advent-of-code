@@ -16,6 +16,41 @@ class Day12Tests: XCTestCase {
     A-end
     b-end
     """
+    
+    let inputMedium = """
+    dc-end
+    HN-start
+    start-kj
+    dc-start
+    dc-HN
+    LN-dc
+    HN-end
+    kj-sa
+    kj-HN
+    kj-dc
+    """
+    
+    let inputLarge = """
+    fs-end
+    he-DX
+    fs-he
+    start-DX
+    pj-DX
+    end-zg
+    zg-sl
+    zg-pj
+    pj-he
+    RW-he
+    fs-DX
+    pj-RW
+    zg-RW
+    start-pj
+    he-WI
+    zg-he
+    pj-fs
+    start-RW
+    """
+
 
     func testPart1() throws {
         let result = day.part1(input)
@@ -23,50 +58,28 @@ class Day12Tests: XCTestCase {
     }
     
     func testPart1Medium() throws {
-        let input = """
-        dc-end
-        HN-start
-        start-kj
-        dc-start
-        dc-HN
-        LN-dc
-        HN-end
-        kj-sa
-        kj-HN
-        kj-dc
-        """
-        let result = day.part1(input)
+        let result = day.part1(inputMedium)
         XCTAssertEqual(result as? Int, 19)
     }
     
     func testPart1Large() throws {
-        let input = """
-        fs-end
-        he-DX
-        fs-he
-        start-DX
-        pj-DX
-        end-zg
-        zg-sl
-        zg-pj
-        pj-he
-        RW-he
-        fs-DX
-        pj-RW
-        zg-RW
-        start-pj
-        he-WI
-        zg-he
-        pj-fs
-        start-RW
-        """
-        let result = day.part1(input)
+        let result = day.part1(inputLarge)
         XCTAssertEqual(result as? Int, 226)
     }
 
     func testPart2() throws {
         let result = day.part2(input)
-        XCTAssertEqual(result as? Int, 0)
+        XCTAssertEqual(result as? Int, 36)
+    }
+
+    func testPart2Medium() throws {
+        let result = day.part2(inputMedium)
+        XCTAssertEqual(result as? Int, 103)
+    }
+    
+    func testPart2bLarge() throws {
+        let result = day.part2(inputLarge)
+        XCTAssertEqual(result as? Int, 3509)
     }
 
 }
