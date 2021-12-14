@@ -12,6 +12,9 @@ struct Point: Hashable {
         case tooManyValues(Int)
         case insufficientValues
     }
+    
+    static let zero = Point(x: 0, y: 0)
+    
     let x: Int
     let y: Int
     

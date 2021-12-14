@@ -11,15 +11,15 @@ final class Day4: Day {
         case noSolvableBoard
     }
     struct BoardPlayInfo: Hashable {
-        let indexPath: IndexPath
+        let location: Point
         let value: Int
         
         func isOnRow(_ row: Int) -> Bool {
-            indexPath.row == row
+            location.row == row
         }
         
         func isOnColumn(_ col: Int) -> Bool {
-            indexPath.column == col
+            location.col == col
         }
     }
   
@@ -46,11 +46,11 @@ final class Day4: Day {
                 guard let pos = board.firstIndex(of: play) else {
                     continue
                 }
-                let indexPath = IndexPath(column: pos % bingoSize, row: pos / bingoSize)
-                boardPlays[idx].insert(BoardPlayInfo(indexPath: indexPath, value: play))
+                let location = Point(row: pos / bingoSize, col: pos % bingoSize)
+                boardPlays[idx].insert(BoardPlayInfo(location: location, value: play))
 
-                let rowCount = boardPlays[idx].count(where: { $0.isOnRow(indexPath.row) })
-                let colCount = boardPlays[idx].count(where: { $0.isOnColumn(indexPath.column)})
+                let rowCount = boardPlays[idx].count(where: { $0.isOnRow(location.row) })
+                let colCount = boardPlays[idx].count(where: { $0.isOnColumn(location.col)})
                 if rowCount == bingoSize || colCount == bingoSize {
                     winningBoard = idx
                     break Game
@@ -87,11 +87,11 @@ final class Day4: Day {
                       let pos = board.firstIndex(of: play) else {
                     continue
                 }
-                let indexPath = IndexPath(column: pos % bingoSize, row: pos / bingoSize)
-                boardPlays[idx].insert(BoardPlayInfo(indexPath: indexPath, value: play))
+                let location = Point(row: pos / bingoSize, col: pos % bingoSize)
+                boardPlays[idx].insert(BoardPlayInfo(location: location, value: play))
 
-                let rowCount = boardPlays[idx].count(where: { $0.isOnRow(indexPath.row) })
-                let colCount = boardPlays[idx].count(where: { $0.isOnColumn(indexPath.column)})
+                let rowCount = boardPlays[idx].count(where: { $0.isOnRow(location.row) })
+                let colCount = boardPlays[idx].count(where: { $0.isOnColumn(location.col)})
                 if rowCount == bingoSize || colCount == bingoSize {
                     completedBoards.insert(idx)
                     

@@ -98,9 +98,64 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         return (self[neighborRow, neighborCol], Point(row: neighborRow, col: neighborCol))
     }
     
-    subscript(row row: Int) -> [Element] {
-        get { data[row] }
+    mutating func fold(row: Int, combining: (Element, Element?) -> Element) {
+        var splitData = Array(data[0..<row])
+        let foldData = data[row..<rowCount].dropFirst()
+        
+        
+        var currSplitRow = splitData.count - 1
+        var currFoldRow = foldData.startIndex
+        while currSplitRow >= 0 {
+            let foldRow = currFoldRow < foldData.endIndex ? foldData[currFoldRow] : nil
+            
+            splitData[currSplitRow] = splitData[currSplitRow].enumerated().map { item -> Element in
+                let (index, value) = item
+                return combining(value, foldRow?[index])
+            }
+            
+            currSplitRow -= 1
+            currFoldRow = foldData.index(after: currFoldRow)
+        }
+        
+        data = splitData
     }
+    
+    mutating func fold(col splitCol: Int, combining: (Element, Element?) -> Element) {
+        var splitData: [[Element]] = []
+        var foldData: [[Element]] = []
+        
+        for row in 0..<rowCount {
+            let currentSplitRow: [Element] = Array(self[row: row].prefix(splitCol))
+            let currentFoldRow: [Element] = Array(self[row: row][splitCol..<colCount].dropFirst())
+            
+            splitData.append(currentSplitRow)
+            foldData.append(currentFoldRow)
+        }
+
+        let splitDataWidth = splitData.first?.count ?? 0
+        for row in 0..<splitData.count {
+            splitData[row] = splitData[row].enumerated().map {
+                let (index, value) = $0
+                let foldRow = foldData[row]
+
+                let foldValue: Element?
+                let foldDataIndex = (splitDataWidth - index - 1)
+                if foldRow.indices.contains(foldDataIndex) {
+                    foldValue = foldRow[foldDataIndex]
+                } else {
+                    foldValue = nil
+                }
+
+                return combining(value, foldValue)
+            }
+        }
+        
+        data = splitData
+    }
+    
+    subscript(row row: Int) -> [Element] { data[row] }
+    
+    subscript(col col: Int) ->  [Element] { data.map { $0[col] } }
     
     subscript(row: Int, col: Int) -> Element {
         get { data[row][col] }
@@ -110,11 +165,6 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
     subscript(point: Point) -> Element {
         get { data[point.row][point.col] }
         set { data[point.row][point.col] = newValue }
-    }
-    
-    subscript(indexPath: IndexPath) -> Element {
-        get { data[indexPath.row][indexPath.column] }
-        set { data[indexPath.row][indexPath.column] = newValue }
     }
     
     // MARK: CustomStringConvertible
@@ -137,7 +187,7 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
     }
 }
 
-extension Matrix where Element: Equatable {
+extension Matrix: Equatable where Element: Equatable {
     func items(for value: Element) -> [(Element, Point)] {
         var results: [(Element, Point)] = []
         
