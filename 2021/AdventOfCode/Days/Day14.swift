@@ -94,7 +94,7 @@ final class Day14: Day {
         
         let adjustedCounts = rawCounts
             .mapValues { value -> Int in
-            if value.isMultiple(of: 2) {
+            if value.isEven {
                 return value / 2
             } else {
                 // Only the first and last character should be odd

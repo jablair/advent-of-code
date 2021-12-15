@@ -8,6 +8,9 @@
 import Foundation
 
 extension Int {
+    
+    var isEven: Bool { isMultiple(of: 2)}
+    var isOdd: Bool { !isEven }
 
     init<C: Collection>(digits: C) where C.Element == Int {
         self = digits.reversed().enumerated().reduce(0) { result, value in
