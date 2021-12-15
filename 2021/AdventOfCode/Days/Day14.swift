@@ -5,7 +5,6 @@
 
 import Foundation
 import RegularExpressionDecoder
-import OrderedCollections
 
 final class Day14: Day {
     enum Error: Swift.Error {
