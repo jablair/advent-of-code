@@ -61,6 +61,18 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
 
     }
     
+    func neighbors(_ neighbors: [Neighbor], of point: Point) -> [(Element, Point)] {
+        neighbors.compactMap { neighbor($0, of: point.row, col: point.col) }
+    }
+    
+    func neighbors(_ neighbors: [Neighbor], of row: Int, col: Int) -> [(Element, Point)] {
+        neighbors.compactMap { neighbor($0, of: row, col: col) }
+    }
+
+    func neighbor(_ neighbor: Neighbor, of point: Point) -> (Element, Point)? {
+        self.neighbor(neighbor, of: point.row, col: point.col)
+    }
+    
     func neighbor(_ neighbor: Neighbor, of row: Int, col: Int) -> (Element, Point)? {
         let neighborRow: Int
         let neighborCol: Int

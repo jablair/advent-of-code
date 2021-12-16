@@ -7,6 +7,20 @@
 
 import Foundation
 
+extension FixedWidthInteger {
+    var digits: [Self] {
+        var reversedDigits: [Self] = []
+        var current = self
+        while current != 0 {
+            let remainder = current % 10
+            current = current / 10
+            reversedDigits.append(remainder)
+        }
+        
+        return Array(reversedDigits.reversed())
+    }
+}
+
 extension Int {
     
     var isEven: Bool { isMultiple(of: 2)}
