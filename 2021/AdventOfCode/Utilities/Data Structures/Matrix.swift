@@ -51,7 +51,7 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
     func items(where predicate: (Element, Point) throws -> Bool) rethrows -> [(Element, Point)] {
         var results: [(Element, Point)] = []
         
-        for (row, col) in product(0..<rowCount, 0..<colCount) {
+        for (row, col) in Algorithms.product(0..<rowCount, 0..<colCount) {
             if try predicate(self[row, col], Point(row: row, col: col)) {
                 results.append((self[row, col], Point(row: row, col: col)))
             }
@@ -203,7 +203,7 @@ extension Matrix: Equatable where Element: Equatable {
     func items(for value: Element) -> [(Element, Point)] {
         var results: [(Element, Point)] = []
         
-        for (row, col) in product(0..<rowCount, 0..<colCount) {
+        for (row, col) in Algorithms.product(0..<rowCount, 0..<colCount) {
             if self[row, col] == value {
                 results.append((value, Point(row: row, col: col)))
             }

@@ -32,5 +32,11 @@ extension Int {
             return result + abs(digit) * Int(pow(10, Double(power)))
         }
     }
+    
+    init<C: Collection>(bits: C) where C.Element == Bool {
+        self = bits.reduce(0) { result, on in
+            result * 2 + (on ? 1 : 0)
+        }
+    }
 
 }
