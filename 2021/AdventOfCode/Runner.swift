@@ -50,6 +50,9 @@ struct Runner: ParsableCommand {
         }
         let day = dayClass.init()
 
+        let overallStartDate = Date()
+        try day.setup(input)
+        
         print("===Day \(dayNumber)===")
 
         let part1StartDate = Date()
@@ -59,6 +62,7 @@ struct Runner: ParsableCommand {
         let part2StartDate = Date()
         let part2 = try day.part2(input)
         print("Part 2 (\(-part2StartDate.timeIntervalSinceNow * 1000) ms): \(part2)")
+        print("Overall (\(-overallStartDate.timeIntervalSinceNow * 1000) ms)")
         print("")
     }
 

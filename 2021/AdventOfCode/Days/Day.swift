@@ -8,6 +8,7 @@ import Foundation
 protocol Day: AnyObject {
     init()
 
+    func setup(_ input: String) throws
     func part1(_ input: String) throws -> CustomStringConvertible
     func part2(_ input: String) throws -> CustomStringConvertible
 }
@@ -19,4 +20,6 @@ extension Day {
         
         return (p1, p2)
     }
+    
+    func setup(_ input: String) { }
 }

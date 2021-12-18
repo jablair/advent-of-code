@@ -15,8 +15,8 @@ struct Point: Hashable {
     
     static let zero = Point(x: 0, y: 0)
     
-    let x: Int
-    let y: Int
+    var x: Int
+    var y: Int
     
     var row: Int { y }
     var col: Int { x }

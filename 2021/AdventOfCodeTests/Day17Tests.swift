@@ -7,13 +7,21 @@ import XCTest
 
 class Day17Tests: XCTestCase {
     let day = Day17()
+    let input = "target area: x=20..30, y=-10..-5"
 
+    override func setUpWithError() throws {
+        try day.setup(input)
+    }
+    
     func testPart1() throws {
-        debugPrint(day.part1(""))
+        let result = try XCTUnwrap(try day.part1(input) as? Int)
+        XCTAssertEqual(result, 45)
+        
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        let result = try XCTUnwrap(try day.part2(input) as? Int)
+        XCTAssertEqual(result, 112)
     }
 
 }
