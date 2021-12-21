@@ -7,13 +7,28 @@ import XCTest
 
 class Day20Tests: XCTestCase {
     let day = Day20()
+    let input = """
+    ..#.#..#####.#.#.#.###.##.....###.##.#..###.####..#####..#....#..#..##..###..######.###...####..#..#####..##..#.#####...##.#.#..#.##..#.#......#.###.######.###.####...#.##.##..#..#..#####.....#.#....###..#.##......#.....#..#..#..##..#...##.######.####.####.#.#...#.......#..#.#.#...####.##.#......#..#...##.#.##..#...##.#.##..###.#......#.#.......#.#.#.####.###.##...#.....####.#..#..#.##.#....##..#.####....##...##..#...#......#.#.......#.......##..####..#...#.#.#...##..#.#..###..#####........#..####......#..#
+
+    #..#.
+    #....
+    ##..#
+    ..#..
+    ..###
+    """
+    
+    override func setUpWithError() throws {
+        try day.setup(input)
+    }
 
     func testPart1() throws {
-        debugPrint(day.part1(""))
+        let result = try XCTUnwrap(day.part1(input) as? Int)
+        XCTAssertEqual(result, 35)
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        let result = try XCTUnwrap(day.part2(input) as? Int)
+        XCTAssertEqual(result, 3351)
     }
 
 }

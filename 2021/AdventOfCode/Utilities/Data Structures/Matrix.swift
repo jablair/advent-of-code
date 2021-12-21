@@ -28,6 +28,9 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
     var rowCount: Int { data.count }
     var colCount: Int { data.first?.count ?? 0 }
     
+    var rowIndices: Range<Int> { 0..<rowCount }
+    var colIndices: Range<Int> { 0..<colCount }
+    
     init(data: [[Element]]) {
         self.data = data
     }
@@ -108,6 +111,28 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         }
         
         return (self[neighborRow, neighborCol], Point(row: neighborRow, col: neighborCol))
+    }
+    
+    func expanded(by: Int, insertedValue: Element) -> Matrix<Element> {
+        guard by > 0 else {
+            return self
+        }
+        
+        var expandedData = data
+        for _ in 0..<by {
+            for idx in expandedData.indices {
+                expandedData[idx].insert(insertedValue, at: 0)
+                expandedData[idx].append(insertedValue)
+            }
+        }
+        
+        for _ in 0..<by {
+            let newRow = Array<Element>(repeating: insertedValue, count: expandedData[0].count)
+            expandedData.insert(newRow, at: 0)
+            expandedData.append(newRow)
+        }
+
+        return Matrix(data: expandedData)
     }
     
     mutating func fold(row: Int, combining: (Element, Element?) -> Element) {
