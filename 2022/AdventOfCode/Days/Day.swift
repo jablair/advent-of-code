@@ -27,4 +27,12 @@ extension Day {
     }
     
     func setup(_ input: String) { }
+    
+    func part1(_ input: String) -> Part1Result {
+        fatalError("Implementation Required")
+    }
+    
+    func part2(_ input: String) -> Part2Result {
+        fatalError("Implementation Required")
+    }
 }
