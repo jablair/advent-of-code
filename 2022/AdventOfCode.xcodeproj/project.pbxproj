@@ -36,6 +36,8 @@
 		AA066B5A2939810F0056B7A0 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFBE6FC290C796700ACE926 /* Day12.swift */; };
 		AA066B5B2939810F0056B7A0 /* Day4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFBE700290C796700ACE926 /* Day4.swift */; };
 		AA066B5C2939810F0056B7A0 /* Day16.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFBE710290C796800ACE926 /* Day16.swift */; };
+		AA066B5F29399EF20056B7A0 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B5E29399EF20056B7A0 /* StringProtocol.swift */; };
+		AA066B602939A0140056B7A0 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B5E29399EF20056B7A0 /* StringProtocol.swift */; };
 		AACAAB29275AF7AD004F4F25 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACAAB272759E1C4004F4F25 /* XCTest.framework */; };
 		AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */; };
 		AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */; };
@@ -138,6 +140,7 @@
 		39C3D07C27556D7800B2F989 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C3D0B3275572E500B2F989 /* Day1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1Tests.swift; sourceTree = "<group>"; };
+		AA066B5E29399EF20056B7A0 /* StringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
 		AACAAB272759E1C4004F4F25 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AACAAB31275DCF64004F4F25 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		AACAAB34275DD032004F4F25 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
@@ -320,12 +323,21 @@
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
 		};
+		AA066B5D29399EDA0056B7A0 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				AA066B5E29399EF20056B7A0 /* StringProtocol.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		AACAAB2F275DCF17004F4F25 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				AACAAB33275DD023004F4F25 /* Data Structures */,
 				AACAAB30275DCF56004F4F25 /* Geometry */,
 				AAE165BF276174D900A72F97 /* Numbers */,
+				AA066B5D29399EDA0056B7A0 /* Text */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 				AAFBE729290C796800ACE926 /* Day13.swift in Sources */,
 				AAFBE725290C796800ACE926 /* Day5.swift in Sources */,
 				AAFBE716290C796800ACE926 /* Day21.swift in Sources */,
+				AA066B5F29399EF20056B7A0 /* StringProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +574,7 @@
 				AA066B4B2939810F0056B7A0 /* Day18.swift in Sources */,
 				AA066B472939810F0056B7A0 /* Day20.swift in Sources */,
 				AAFBE755290C797700ACE926 /* Day6Tests.swift in Sources */,
+				AA066B602939A0140056B7A0 /* StringProtocol.swift in Sources */,
 				AACAAB3F275DD35E004F4F25 /* Matrix.swift in Sources */,
 				39C3D0B62755746500B2F989 /* Day.swift in Sources */,
 				AAFBE74B290C797700ACE926 /* Day17Tests.swift in Sources */,
