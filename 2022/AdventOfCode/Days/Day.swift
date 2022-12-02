@@ -8,6 +8,8 @@ import Foundation
 protocol Day {
     associatedtype Part1Result: CustomStringConvertible = String
     associatedtype Part2Result: CustomStringConvertible = String
+    
+    init()
 
     func setup(_ input: String) throws
     func part1(_ input: String) async throws -> Part1Result
