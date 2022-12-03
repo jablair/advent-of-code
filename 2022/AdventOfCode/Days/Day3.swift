@@ -13,9 +13,8 @@ final class Day3: Day {
             .map {
                 let mid = $0.index($0.startIndex, offsetBy: $0.count / 2)
                 return (Set($0[..<mid]), Set($0[mid...]))
-            }.compactMap {
-                $0.0.intersection($0.1).first.map(Character.init)
-            }.map { value(of: $0) }
+            }.compactMap { $0.0.intersection($0.1).first }
+            .map { value(of: $0) }
             .sum()
     }
 
