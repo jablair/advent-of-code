@@ -23,7 +23,7 @@ final class Day4: Day {
         }
         
         var isOverlapping: Bool {
-            !left.intersection(right).isEmpty
+            !left.isDisjoint(with: right)
         }
         
         init(from decoder: Decoder) throws {
