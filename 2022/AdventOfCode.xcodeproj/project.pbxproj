@@ -38,6 +38,8 @@
 		AA066B5C2939810F0056B7A0 /* Day16.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFBE710290C796800ACE926 /* Day16.swift */; };
 		AA066B5F29399EF20056B7A0 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B5E29399EF20056B7A0 /* StringProtocol.swift */; };
 		AA066B602939A0140056B7A0 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B5E29399EF20056B7A0 /* StringProtocol.swift */; };
+		AA066B63293DB0CF0056B7A0 /* Parsing in Frameworks */ = {isa = PBXBuildFile; productRef = AA066B62293DB0CF0056B7A0 /* Parsing */; };
+		AA066B65293DB74D0056B7A0 /* Parsing in Frameworks */ = {isa = PBXBuildFile; productRef = AA066B64293DB74D0056B7A0 /* Parsing */; };
 		AACAAB29275AF7AD004F4F25 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACAAB272759E1C4004F4F25 /* XCTest.framework */; };
 		AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */; };
 		AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */; };
@@ -206,6 +208,7 @@
 				AACAAB29275AF7AD004F4F25 /* XCTest.framework in Frameworks */,
 				AADA712D27572774009726D6 /* Collections in Frameworks */,
 				AADA71292757221F009726D6 /* Algorithms in Frameworks */,
+				AA066B63293DB0CF0056B7A0 /* Parsing in Frameworks */,
 				AADA713127572774009726D6 /* OrderedCollections in Frameworks */,
 				AADA714627585A61009726D6 /* ArgumentParser in Frameworks */,
 				AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */,
@@ -220,6 +223,7 @@
 				AADA713D275746EE009726D6 /* Collections in Frameworks */,
 				AADA713B275746D6009726D6 /* Algorithms in Frameworks */,
 				AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */,
+				AA066B65293DB74D0056B7A0 /* Parsing in Frameworks */,
 				AADA7141275746EE009726D6 /* OrderedCollections in Frameworks */,
 				AADA713F275746EE009726D6 /* DequeModule in Frameworks */,
 			);
@@ -399,6 +403,7 @@
 				AADA713027572774009726D6 /* OrderedCollections */,
 				AADA714527585A61009726D6 /* ArgumentParser */,
 				AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */,
+				AA066B62293DB0CF0056B7A0 /* Parsing */,
 			);
 			productName = AdventOfCode;
 			productReference = 39C3D06D27556C2F00B2F989 /* AdventOfCode */;
@@ -424,6 +429,7 @@
 				AADA713E275746EE009726D6 /* DequeModule */,
 				AADA7140275746EE009726D6 /* OrderedCollections */,
 				AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */,
+				AA066B64293DB74D0056B7A0 /* Parsing */,
 			);
 			productName = AdventOfCodeTests;
 			productReference = 39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */;
@@ -461,6 +467,7 @@
 				AADA712B27572774009726D6 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				AADA714427585A61009726D6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */,
+				AA066B61293DB0CF0056B7A0 /* XCRemoteSwiftPackageReference "swift-parsing" */,
 			);
 			productRefGroup = 39C3D06E27556C2F00B2F989 /* Products */;
 			projectDirPath = "";
@@ -828,6 +835,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		AA066B61293DB0CF0056B7A0 /* XCRemoteSwiftPackageReference "swift-parsing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-parsing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/flight-school/regularexpressiondecoder.git";
@@ -855,6 +870,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AA066B62293DB0CF0056B7A0 /* Parsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA066B61293DB0CF0056B7A0 /* XCRemoteSwiftPackageReference "swift-parsing" */;
+			productName = Parsing;
+		};
+		AA066B64293DB74D0056B7A0 /* Parsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA066B61293DB0CF0056B7A0 /* XCRemoteSwiftPackageReference "swift-parsing" */;
+			productName = Parsing;
+		};
 		AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AACAAB2A275AFD26004F4F25 /* XCRemoteSwiftPackageReference "regularexpressiondecoder" */;
