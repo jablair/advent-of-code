@@ -10,9 +10,7 @@ final class Day6: Day {
     
     private func indexAfter(input: String, chunkSize: Int) -> Int {
         let candidates = input.windows(ofCount: chunkSize)
-        let index = candidates.firstIndex { candidate in
-            Set(candidate).count == chunkSize
-        }!
+        let index = candidates.firstIndex(where: \.allUnique)!
         
         return candidates.distance(from: candidates.startIndex, to: index) + chunkSize
     }

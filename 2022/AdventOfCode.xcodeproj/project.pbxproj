@@ -40,6 +40,8 @@
 		AA066B602939A0140056B7A0 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B5E29399EF20056B7A0 /* StringProtocol.swift */; };
 		AA066B63293DB0CF0056B7A0 /* Parsing in Frameworks */ = {isa = PBXBuildFile; productRef = AA066B62293DB0CF0056B7A0 /* Parsing */; };
 		AA066B65293DB74D0056B7A0 /* Parsing in Frameworks */ = {isa = PBXBuildFile; productRef = AA066B64293DB74D0056B7A0 /* Parsing */; };
+		AA066B67293F0B3A0056B7A0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B66293F0B3A0056B7A0 /* Collection.swift */; };
+		AA066B68293F0B890056B7A0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA066B66293F0B3A0056B7A0 /* Collection.swift */; };
 		AACAAB29275AF7AD004F4F25 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACAAB272759E1C4004F4F25 /* XCTest.framework */; };
 		AACAAB2C275AFD26004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2B275AFD26004F4F25 /* RegularExpressionDecoder */; };
 		AACAAB2E275B0142004F4F25 /* RegularExpressionDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = AACAAB2D275B0142004F4F25 /* RegularExpressionDecoder */; };
@@ -143,6 +145,7 @@
 		39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C3D0B3275572E500B2F989 /* Day1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1Tests.swift; sourceTree = "<group>"; };
 		AA066B5E29399EF20056B7A0 /* StringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
+		AA066B66293F0B3A0056B7A0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		AACAAB272759E1C4004F4F25 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AACAAB31275DCF64004F4F25 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		AACAAB34275DD032004F4F25 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 				AACAAB36275DD04A004F4F25 /* Matrix.swift */,
 				AACAAB34275DD032004F4F25 /* Sequence.swift */,
 				AAE165BD276174C000A72F97 /* Set.swift */,
+				AA066B66293F0B3A0056B7A0 /* Collection.swift */,
 			);
 			path = "Data Structures";
 			sourceTree = "<group>";
@@ -513,6 +517,7 @@
 				AAE165C12761751D00A72F97 /* Integers.swift in Sources */,
 				AAFBE71C290C796800ACE926 /* Day10.swift in Sources */,
 				AAFBE721290C796800ACE926 /* Day17.swift in Sources */,
+				AA066B67293F0B3A0056B7A0 /* Collection.swift in Sources */,
 				AAFBE726290C796800ACE926 /* Day23.swift in Sources */,
 				AAFBE714290C796800ACE926 /* Day12.swift in Sources */,
 				AAFBE723290C796800ACE926 /* Day22.swift in Sources */,
@@ -543,6 +548,7 @@
 				AA066B462939810F0056B7A0 /* Day21.swift in Sources */,
 				AA066B5A2939810F0056B7A0 /* Day12.swift in Sources */,
 				AAFBE750290C797700ACE926 /* Day10Tests.swift in Sources */,
+				AA066B68293F0B890056B7A0 /* Collection.swift in Sources */,
 				AA066B562939810F0056B7A0 /* Day11.swift in Sources */,
 				AAE165C3276177BA00A72F97 /* Set.swift in Sources */,
 				AA066B512939810F0056B7A0 /* Day15.swift in Sources */,
