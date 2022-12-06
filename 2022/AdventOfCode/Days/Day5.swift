@@ -11,7 +11,7 @@ final class Day5: Day {
     
     struct Move {
         let count: Int
-        let sourcec: Int
+        let source: Int
         let destination: Int
     }
 
@@ -28,7 +28,7 @@ final class Day5: Day {
             Int.parser()
             " to "
             Int.parser()
-        }.map { Move(count: $0, sourcec: $1, destination: $2)}
+        }.map { Move(count: $0, source: $1, destination: $2)}
         
         moves = try segments[1].map {
             try moveParser.parse($0)
@@ -59,7 +59,7 @@ final class Day5: Day {
         
         moves.forEach { move in
             for _ in 0..<move.count {
-                mutatedStacks[move.destination - 1].append(mutatedStacks[move.sourcec - 1].removeLast())
+                mutatedStacks[move.destination - 1].append(mutatedStacks[move.source - 1].removeLast())
             }
         }
         
@@ -72,7 +72,7 @@ final class Day5: Day {
         moves.forEach { move in
             var moving: Deque<Character> = []
             for _ in 0..<move.count {
-                moving.insert(mutatedStacks[move.sourcec - 1].removeLast(), at: 0)
+                moving.insert(mutatedStacks[move.source - 1].removeLast(), at: 0)
             }
             mutatedStacks[move.destination - 1].append(contentsOf: moving)
         }

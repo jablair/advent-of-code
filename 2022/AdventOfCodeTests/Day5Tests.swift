@@ -22,6 +22,7 @@ class Day5Tests: XCTestCase {
     override func setUp() async throws {
         try day.setup(input)
     }
+    
     func testPart1() async throws {
         let result = try await day.part1(input)
         XCTAssertEqual(result, "CMZ")
