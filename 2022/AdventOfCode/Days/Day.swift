@@ -26,7 +26,7 @@ extension Day {
         return (p1, p2)
     }
     
-    func setup(_ input: String) { }
+    func setup(_ input: String) throws { }
     
     func part1(_ input: String) -> Part1Result {
         fatalError("Implementation Required")
