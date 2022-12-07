@@ -17,7 +17,7 @@ class Day3Tests: XCTestCase {
     """
 
     override func setUp() async throws {
-        day.setup(input)
+        try day.setup(input)
     }
 
     func testPart1() async throws {

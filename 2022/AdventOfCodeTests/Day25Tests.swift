@@ -8,7 +8,6 @@ import XCTest
 class Day25Tests: XCTestCase {
     let day = Day25()
     let input = """
-    
     """
 
     override func setUp() async throws {
