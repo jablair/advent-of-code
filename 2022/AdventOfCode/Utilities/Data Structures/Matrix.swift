@@ -23,7 +23,7 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         static var cardinal: [Neighbor] { [.north, .west, .south, .east] }
     }
     
-    private var data: [[Element]]
+    fileprivate var data: [[Element]]
     
     var rowCount: Int { data.count }
     var colCount: Int { data.first?.count ?? 0 }
@@ -235,6 +235,20 @@ extension Matrix: Equatable where Element: Equatable {
         }
         
         return results
+    }
+}
+
+extension Matrix where Element: Comparable {
+    func max() -> Element? {
+        return data
+            .compactMap { $0.max() }
+            .max()
+    }
+    
+    func min() -> Element? {
+        return data
+            .compactMap { $0.min() }
+            .min()
     }
 }
 
