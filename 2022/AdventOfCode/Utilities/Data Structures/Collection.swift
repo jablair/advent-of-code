@@ -13,15 +13,14 @@ extension Collection where Element: Hashable {
         Set(self).count == count
     }
     
-}
-
-extension RandomAccessCollection where Self.Index: Strideable, Self.Index.Stride: SignedInteger {
     func countPrefix(through predicate: (Element) throws -> Bool) rethrows -> Int {
         var count = 0
         
-        for idx in startIndex..<endIndex {
+        var iterator = makeIterator()
+        while let value = iterator.next() {
             count += 1
-            if try !predicate(self[idx]) {
+
+            if try !predicate(value) {
                 break
             }
         }
@@ -32,9 +31,10 @@ extension RandomAccessCollection where Self.Index: Strideable, Self.Index.Stride
     func countSuffix(through predicate: (Element) throws -> Bool) rethrows -> Int {
         var count = 0
         
-        for idx in stride(from: index(before: endIndex), through: startIndex, by: -1) {
+        var iterator = reversed().makeIterator()
+        while let value = iterator.next() {
             count += 1
-            if try !predicate(self[idx]) {
+            if try !predicate(value) {
                 break
             }
         }
