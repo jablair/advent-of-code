@@ -1,5 +1,5 @@
 //
-//  Day10Tests.swift
+//  Day10Tests swift
 //  Day10Tests
 //
 
@@ -161,27 +161,22 @@ class Day10Tests: XCTestCase {
     }
     
     func testPart1() async throws {
-//        let input = """
-//        noop
-//        addx 3
-//        addx -5
-//        """
         let result = try await day.part1(input)
         XCTAssertEqual(result, 13140)
     }
 
     func testPart2() async throws {
         let answer = """
-        ##..##..##..##..##..##..##..##..##..##..
-        ###...###...###...###...###...###...###.
-        ####....####....####....####....####....
-        #####.....#####.....#####.....#####.....
-        ######......######......######......####
-        #######.......#######.......#######.....
+        ##  ##  ##  ##  ##  ##  ##  ##  ##  ##
+        ###   ###   ###   ###   ###   ###   ###
+        ####    ####    ####    ####    ####
+        #####     #####     #####     #####
+        ######      ######      ######      ####
+        #######       #######       #######
         """
         
         let result = try await day.part2(input)
-        XCTAssertEqual(result, answer)
+        XCTAssertEqual(result.0, answer)
     }
 
 }

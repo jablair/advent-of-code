@@ -43,3 +43,19 @@ extension Collection where Element: Hashable {
     }
 
 }
+
+public extension MutableCollection {
+    
+    mutating func mutatingMap<C>(_ action: (inout Element) -> C) -> Array<C> {
+        var index = startIndex
+        var result = Array<C>()
+        while index != endIndex {
+            var copy = self[index]
+            result.append(action(&copy))
+            self[index] = copy
+            
+            index = self.index(after: index)
+        }
+        return result
+    }
+}

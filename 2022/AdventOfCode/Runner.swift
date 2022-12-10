@@ -50,20 +50,21 @@ struct Runner: AsyncParsableCommand {
         }
         let day = dayClass.init()
 
-        let overallStartDate = Date()
         try day.setup(input)
         
         print("===Day \(dayNumber)===")
 
-        let part1StartDate = Date()
-        let part1 = try await day.part1(input)
-        print("Part 1 (\(-part1StartDate.timeIntervalSinceNow * 1000) ms): \(part1)")
-
-        let part2StartDate = Date()
-        let part2 = try await day.part2(input)
-        print("Part 2 (\(-part2StartDate.timeIntervalSinceNow * 1000) ms): \(part2)")
-        print("Overall (\(-overallStartDate.timeIntervalSinceNow * 1000) ms)")
-        print("")
+        _ = try await day.run(input)
+        
+//        let part1StartDate = Date()
+//        let part1 = try await day.part1(input)
+//        print("Part 1 (\(-part1StartDate.timeIntervalSinceNow * 1000) ms): \(part1)")
+//
+//        let part2StartDate = Date()
+//        let part2 = try await day.part2(input)
+//        print("Part 2 (\(-part2StartDate.timeIntervalSinceNow * 1000) ms): \(part2)")
+//        print("Overall (\(-overallStartDate.timeIntervalSinceNow * 1000) ms)")
+//        print("")
     }
 
 }
