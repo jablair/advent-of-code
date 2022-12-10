@@ -57,8 +57,7 @@ final class Day9: Day {
     }
     
     private func update(knot: inout Point, to previous: Point) {
-        guard !knot.isNeighbor(of: previous) else { return }
-        
+        guard !knot.isAdjascent(to: previous) else { return }
         if abs(previous.x - knot.x) > 1 {
             if previous.x > knot.x {
                 knot.x += 1
@@ -66,10 +65,8 @@ final class Day9: Day {
                 knot.x -= 1
             }
             
-            if previous.y < knot.y {
-                knot.y -= 1
-            } else if previous.y > knot.y {
-                knot.y += 1
+            if !knot.isOrthoginal(to: previous) {
+                knot.y += previous.y < knot.y ? -1 : 1
             }
         } else if abs(previous.y - knot.y) > 1 {
             if previous.y > knot.y {
@@ -78,10 +75,8 @@ final class Day9: Day {
                 knot.y -= 1
             }
             
-            if previous.x < knot.x {
-                knot.x -= 1
-            } else if previous.x > knot.x {
-                knot.x += 1
+            if !knot.isOrthoginal(to: previous) {
+                knot.x += previous.x < knot.x ? -1 : 1
             }
         }
         
@@ -119,22 +114,4 @@ final class Day9: Day {
         
         return visited
     }
-}
-
-extension Point {
-    func isNeighbor(of point: Point) -> Bool {
-        if self == point {
-            return true
-        } else if self.x == point.x && abs(self.y - point.y) == 1 {
-            return true
-        } else if self.y == point.y && abs(self.x - point.x) == 1 {
-            return true
-        } else if abs(self.x - point.x) == 1 && abs(self.y - point.y) == 1 {
-            return true
-        }
-        
-        return false
-    }
-    
-    var description: String { "[\(x), \(y)]" }
 }

@@ -42,4 +42,24 @@ struct Point: Hashable {
         self.x = array[0]
         self.y = array[1]
     }
+    
+    func isOrthoginal(to point: Point) -> Bool {
+        return x == point.x || y == point.y
+    }
+    
+    func isAdjascent(to point: Point, includeDiagonals: Bool = true) -> Bool {
+        if self.x == point.x && abs(self.y - point.y) <= 1 {
+            return true
+        } else if self.y == point.y && abs(self.x - point.x) <= 1 {
+            return true
+        } else if abs(self.x - point.x) == 1 && abs(self.y - point.y) == 1 {
+            return true
+        }
+        
+        return false
+    }
+}
+
+extension Point: CustomStringConvertible {
+    var description: String { "[\(x), \(y)]" }
 }
