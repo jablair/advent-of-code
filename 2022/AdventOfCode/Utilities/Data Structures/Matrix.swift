@@ -204,6 +204,7 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         set { data[point.row][point.col] = newValue }
     }
     
+    
     // MARK: CustomStringConvertible
     var description: String {
         let rows = data.map { row -> String in
@@ -221,6 +222,13 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         Dim: \(rowCount) x \(colCount)
         \(description)
         """
+    }
+}
+
+extension Matrix where Element == Character {
+    var packedDescription: String {
+        data.map { String($0) }.joined(separator: "\n")
+        
     }
 }
 
