@@ -31,23 +31,12 @@ final class Day10: Day {
     var registers: [Int: Int] = [:]
     
     func run(_ input: String) async throws -> (Int, String) {
-        let overallStartDate = Date()
-
-        let part1StartDate = Date()
         let p1 = try await part1(input)
-        print("Part 1 (\(-part1StartDate.timeIntervalSinceNow * 1000) ms): \(p1)")
-
-        let part2StartDate = Date()
         let p2 = try await part2(input)
-        print("Part 2 (\(-part2StartDate.timeIntervalSinceNow * 1000) ms):")
-        print(p2.0)
-        print(p2.1)
+
+        print("Part 2 Screen:\n\(p2.0)")
         
-        print("Overall (\(-overallStartDate.timeIntervalSinceNow * 1000) ms)")
-        print("")
-
         return (p1, p2.1)
-
     }
     
     func setup(_ input: String) throws {

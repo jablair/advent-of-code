@@ -20,17 +20,8 @@ protocol Day {
 
 extension Day {
     func run(_ input: String) async throws -> (Part1Result, Part2Result) {
-        let overallStartDate = Date()
-
-        let part1StartDate = Date()
         let p1 = try await part1(input)
-        print("Part 1 (\(-part1StartDate.timeIntervalSinceNow * 1000) ms): \(p1)")
-
-        let part2StartDate = Date()
         let p2 = try await part2(input)
-        print("Part 2 (\(-part2StartDate.timeIntervalSinceNow * 1000) ms): \(p2)")
-        print("Overall (\(-overallStartDate.timeIntervalSinceNow * 1000) ms)")
-        print("")
 
         return (p1, p2)
     }
