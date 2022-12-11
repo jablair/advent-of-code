@@ -93,7 +93,7 @@ final class Day10: Day {
     }
 
     func part2(_ input: String) async throws -> (String, String) {
-        var screen: Matrix<Character> = Matrix(repeating: " ", rows: 6, columns: 40)
+        var screen: Matrix<Character> = Matrix(repeating: ".", rows: 6, columns: 40)
         
         (0..<screen.rowCount).forEach { row in
             (0..<screen.colCount).forEach { col in
@@ -107,8 +107,12 @@ final class Day10: Day {
                 }
             }
         }
-                
-        return (screen.packedDescription, RecognizeLetters(from: screen.packedDescription))
+        
+        let recognizable = screen
+            .packedDescription
+            .map { $0 == "." ? " " : $0}
+        
+        return (screen.packedDescription, RecognizeLetters(from: String(recognizable)))
     }
 }
 

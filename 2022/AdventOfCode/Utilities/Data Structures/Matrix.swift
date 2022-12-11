@@ -190,6 +190,7 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
         data = splitData
     }
     
+    // MARK: Subscripts
     subscript(row row: Int) -> [Element] { data[row] }
     
     subscript(col col: Int) ->  [Element] { data.map { $0[col] } }
@@ -228,7 +229,6 @@ struct Matrix<Element>: Sequence, CustomStringConvertible, CustomDebugStringConv
 extension Matrix where Element == Character {
     var packedDescription: String {
         data.map { String($0) }.joined(separator: "\n")
-        
     }
 }
 
