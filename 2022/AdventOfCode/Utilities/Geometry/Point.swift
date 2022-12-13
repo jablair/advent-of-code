@@ -58,6 +58,15 @@ struct Point: Hashable {
         
         return false
     }
+    
+    func neighbors() -> [Point] {
+        return [
+            Point(x: x-1, y: y),
+            Point(x: x+1, y: y),
+            Point(x: x, y: y-1),
+            Point(x: x, y: y+1)
+        ]
+    }
 }
 
 extension Point: CustomStringConvertible {
