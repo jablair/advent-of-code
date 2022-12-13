@@ -84,16 +84,14 @@ final class Day10: Day {
     func part2(_ input: String) async throws -> (String, String) {
         var screen: Matrix<Character> = Matrix(repeating: ".", rows: 6, columns: 40)
         
-        (0..<screen.rowCount).forEach { row in
-            (0..<screen.colCount).forEach { col in
-                let register = (col + 1) + screen.colCount * row
-                let value = registers.value(for: register)
-                
-                let sprite = value-1...(value+1)
-                
-                if sprite.contains(col) {
-                    screen[row, col] = "#"
-                }
+        for (row, col) in product(0..<screen.rowCount, 0..<screen.colCount) {
+            let register = (col + 1) + screen.colCount * row
+            let value = registers.value(for: register)
+            
+            let sprite = value-1...(value+1)
+            
+            if sprite.contains(col) {
+                screen[row, col] = "#"
             }
         }
         
