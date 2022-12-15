@@ -101,7 +101,6 @@ final class Day13: Day {
                 return (m1, m2)
             }.enumerated()
             .filter { messageInfo in
-                let id = messageInfo.0 + 1
                 let messages = messageInfo.1
                 return validate(list: messages.0, right: messages.1) == .orderedDescending
             }

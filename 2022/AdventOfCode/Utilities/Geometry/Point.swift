@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Point: Hashable {
+//infix operator +
+
+struct Point: Hashable, Equatable {
     enum Error: Swift.Error {
         case tooManyValues(Int)
         case insufficientValues
@@ -21,7 +23,7 @@ struct Point: Hashable {
     var row: Int { y }
     var col: Int { x }
     
-    init(x: Int, y: Int) {
+    init(x: Int = 0, y: Int = 0) {
         self.x = x
         self.y = y
     }
@@ -59,6 +61,14 @@ struct Point: Hashable {
         return false
     }
     
+    func isVerticallyAligned(to point: Point) -> Bool {
+        return y == point.y
+    }
+    
+    func isHorizontallyAligned(to point: Point) -> Bool {
+        return x == point.x
+    }
+    
     func neighbors() -> [Point] {
         return [
             Point(x: x-1, y: y),
@@ -66,6 +76,10 @@ struct Point: Hashable {
             Point(x: x, y: y-1),
             Point(x: x, y: y+1)
         ]
+    }
+    
+    static func +(lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 }
 
